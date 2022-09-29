@@ -1,0 +1,227 @@
+@import "geral",
+"variaveis";
+
+@mixin botaoclear {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+@mixin box {
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: -4px 1px 0px 1px $shadow;
+}
+@mixin before {
+    content: '';
+    z-index: 0;
+    left: 0;
+    background-color: $bg-primary;
+    position: absolute;
+
+}
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin flexcolumnstart {
+    display: flex;
+    flex-direction: column;
+}
+@mixin estiloH2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 10px;  
+    color: $black;
+}
+@mixin flexBoxCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexBoxColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+@mixin flexBoxAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header {
+    @include flexBoxColumn();
+    width: $tamanho-max;
+    padding: 15px;
+    h4 {
+        font-size: 1.6rem;
+    }
+    nav {
+        @include flexBoxCenter();
+        margin-top: 20px;
+        width: 100%;
+        ul {
+            @include flexBoxAround();
+            width: 80%;
+            padding: 20px;
+            li {
+                list-style: none;
+                a {
+                    text-decoration: none;
+                    color: $black;
+                    font-weight: 600;
+                }
+            }
+        }
+    }      
+}
+.section-1 {
+    width: $tamanho-max;
+    .container {
+        width: 100%;
+        @include flexBoxColumn();
+        .texto {
+            width: 80%;
+            @include flexBoxColumn();
+            color: $color-primary;
+            h2 {
+                @include estiloH2();
+            }
+            .area-titulo {
+                position: relative;
+                &::before{
+                    @include before();
+                    left: 0;
+                    width: 45%;
+                    height: 40px;
+                }
+                .titulo {
+                    position: relative;
+                    z-index: 3;   
+                }
+            }
+            p {
+                margin-top: 30px;
+            }
+            .area-botao {
+                margin-top: 35px;
+                width: 50%;
+                @include flexBoxCenter();
+                flex-wrap: wrap;
+                button {
+                    @include botaoclear();
+                    background-color: $bg-primary;
+                    padding: 20px;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    width: 200px;
+                }
+            }      
+        }
+    }
+}
+.section-2 {
+    width: $tamanho-max;
+    @include flexBoxCenter();
+    .cards {
+        @include flexBoxColumn();
+        width: 80%;
+        .card {
+           @include flexcolumnstart();
+            align-items: flex-start;
+            width: 60%;
+            height: 300px;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: $bg-secondary;
+            border-radius: 16px;
+            span {
+                @include box();
+            }
+            .titulo-card {
+                position: relative;
+                margin-top: 20px;
+                &::before {
+                    @include before();
+                    width: 50%;
+                    height: 8px;
+                }
+                h4 {
+                    position: relative;
+                    z-index: 3;
+                }
+            }
+            p {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+footer {
+    margin-top: 30px;
+    @include flexBoxColumn();
+    width: $tamanho-max;
+    padding: 15px;
+    ul {
+        margin-top: 20px;
+        width: 80%;
+        @include flexBoxAround();
+        li {
+            @include box();
+        }
+    }
+}
+@media (min-width: 800px){
+    header {
+        @include flexBoxAround();
+        flex-direction: row;
+        nav {
+            width: 50%;
+        }
+    }
+    .section-1{
+        .container {
+            @include flexBoxAround();
+            flex-direction: row;
+            .texto {
+                width: 50%;
+                p {
+                    width: 60%;
+                }
+                .area-botao {
+                    width: 100%;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                }
+            }
+        }
+        
+    }
+    .section-2 {
+        .cards {
+            @include flexBoxAround();
+            flex-direction: row;
+            .card {
+                margin-left: 10px;
+                
+            }
+        }
+    }
+    footer {
+        @include flexBoxAround();
+        flex-direction: row;
+        ul {
+            width: 20%;
+        }
+    }
+    
+}
+
+

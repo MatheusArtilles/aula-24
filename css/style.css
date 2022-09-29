@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 15px;
+}
+header h4 {
+  font-size: 1.6rem;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.section-1 {
+  width: 100vw;
+}
+.section-1 .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-1 .container .texto {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #8b8b8b;
+}
+.section-1 .container .texto h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 10px;
+  color: #000;
+}
+.section-1 .container .texto .area-titulo {
+  position: relative;
+}
+.section-1 .container .texto .area-titulo::before {
+  content: "";
+  z-index: 0;
+  left: 0;
+  background-color: #03faee;
+  position: absolute;
+  left: 0;
+  width: 45%;
+  height: 40px;
+}
+.section-1 .container .texto .area-titulo .titulo {
+  position: relative;
+  z-index: 3;
+}
+.section-1 .container .texto p {
+  margin-top: 30px;
+}
+.section-1 .container .texto .area-botao {
+  margin-top: 35px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.section-1 .container .texto .area-botao button {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #03faee;
+  padding: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.section-2 {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-2 .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.section-2 .cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  height: 300px;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 16px;
+}
+.section-2 .cards .card span {
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 100%;
+  background-color: #fff;
+  box-shadow: -4px 1px 0px 1px #92f7f2;
+}
+.section-2 .cards .card .titulo-card {
+  position: relative;
+  margin-top: 20px;
+}
+.section-2 .cards .card .titulo-card::before {
+  content: "";
+  z-index: 0;
+  left: 0;
+  background-color: #03faee;
+  position: absolute;
+  width: 50%;
+  height: 8px;
+}
+.section-2 .cards .card .titulo-card h4 {
+  position: relative;
+  z-index: 3;
+}
+.section-2 .cards .card p {
+  margin-top: 10px;
+}
+
+footer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 15px;
+}
+footer ul {
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer ul li {
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 100%;
+  background-color: #fff;
+  box-shadow: -4px 1px 0px 1px #92f7f2;
+}
+
+@media (min-width: 800px) {
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  header nav {
+    width: 50%;
+  }
+  .section-1 .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  .section-1 .container .texto {
+    width: 50%;
+  }
+  .section-1 .container .texto p {
+    width: 60%;
+  }
+  .section-1 .container .texto .area-botao {
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .section-2 .cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  .section-2 .cards .card {
+    margin-left: 10px;
+  }
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  footer ul {
+    width: 20%;
+  }
+}/*# sourceMappingURL=style.css.map */
